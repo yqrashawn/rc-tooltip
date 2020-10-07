@@ -1,8 +1,13 @@
 {
   "name": "@cfxjs/rc-tooltip",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React Tooltip",
-  "keywords": ["react", "react-component", "react-tooltip", "tooltip"],
+  "keywords": [
+    "react",
+    "react-component",
+    "react-tooltip",
+    "tooltip"
+  ],
   "homepage": "http://github.com/yqrashawn/rc-tooltip",
   "bugs": {
     "url": "http://github.com/yqrashawn/rc-tooltip/issues"
@@ -12,7 +17,13 @@
     "url": "git@github.com:yqrashawn/rc-tooltip.git"
   },
   "license": "MIT",
-  "files": ["dist", "lib", "es", "assets/*.css", "assets/*.less"],
+  "files": [
+    "dist",
+    "lib",
+    "es",
+    "assets/*.css",
+    "assets/*.less"
+  ],
   "main": "lib/index",
   "module": "es/index",
   "scripts": {
@@ -46,7 +57,9 @@
     "react-dom": "^16.10.2",
     "typescript": "^4.0.3"
   },
-  "maintainers": ["namy.19@gmail.com"],
+  "maintainers": [
+    "namy.19@gmail.com"
+  ],
   "publishConfig": {
     "access": "public"
   }
