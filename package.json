@@ -1,6 +1,6 @@
 {
   "name": "@cfxjs/rc-tooltip",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "React Tooltip",
   "keywords": ["react", "react-component", "react-tooltip", "tooltip"],
   "homepage": "http://github.com/yqrashawn/rc-tooltip",
@@ -21,7 +21,7 @@
     "coverage": "father test --coverage",
     "lint": "eslint src/ examples/ --ext .tsx,.ts,.jsx,.js",
     "now-build": "npm run build",
-    "prepublishOnly": "npm run compile && np --no-cleanup --yolo --no-publish",
+    "prepublishOnly": "npm run compile",
     "start": "cross-env NODE_ENV=development father doc dev --storybook",
     "test": "father test"
   },
@@ -45,13 +45,30 @@
     "eslint": "^7.1.0",
     "father": "^2.23.1",
     "less": "^3.11.1",
-    "np": "^6.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "semantic-release": "^17.1.2",
     "typescript": "^4.0.3"
   },
   "maintainers": ["namy.19@gmail.com"],
   "publishConfig": {
     "access": "public"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      "@semantic-release/github"
+    ],
+    "branches": [
+      "+([0-9])?(.{+([0-9]),x}).x",
+      "master",
+      {
+        "name": "rc",
+        "channel": "rc",
+        "prerelease": "rc"
+      }
+    ]
   }
 }

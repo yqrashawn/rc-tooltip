@@ -1,13 +1,20 @@
 language: node_js
 
 node_js:
-  - 10
+  - 13
+branches:
+  only:
+    - master
+    - rc
 
 script:
   - |
     if [ "$TEST_TYPE" = test ]; then
       npm run coverage && \
       bash <(curl -s https://codecov.io/bash)
+    elif [ "$TEST_TYPE" = compile ]; then
+      npm run $TEST_TYPE
+      npx semantic-release
     else
       npm run $TEST_TYPE
     fi
@@ -15,3 +22,4 @@ env:
   matrix:
     - TEST_TYPE=lint
     - TEST_TYPE=test
+    - TEST_TYPE=compile
